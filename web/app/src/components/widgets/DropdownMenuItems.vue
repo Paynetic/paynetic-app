@@ -4,7 +4,7 @@
     <template v-for="(item, index) in items" :key="index.toString()">
       <component
         :is="itemTag(item)"
-        class="ct-dropdown-item"
+        class="pn-dropdown-item"
         :class="{ [item.class ?? '']: item.class }"
         v-bind="itemProps(item)"
         :disabled="item.loading"
@@ -108,7 +108,7 @@ const computeItemLabel = (item: IDropdownMenuItem) => {
     overflow-y: auto;
   }
 }
-.ct-dropdown-item {
+.pn-dropdown-item {
   @mixin medium 15px;
   background-color: white;
   display: block;

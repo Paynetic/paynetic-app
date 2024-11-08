@@ -93,15 +93,40 @@ const router = createRouter({
           path: '',
           name: 'Profile',
           component: () => import('./views/Profile.vue'),
-          redirect: '/profile/backed',
+          redirect: '/profile/subscriptions',
           meta: metaAuth('Profile'),
           children: [
+            {
+              path: 'subscriptions',
+              name: 'Subscriptions',
+              component: () => import('./components/profile/Subscriptions.vue'),
+            },
+            {
+              path: 'products',
+              name: 'Products',
+              component: () => import('./components/profile/Products.vue'),
+            },
             {
               path: 'settings',
               name: 'Settings',
               component: () => import('./components/profile/Settings.vue'),
             },
           ],
+        },
+        {
+          path: '/browse',
+          name: 'Browse',
+          component: () => import('./views/Products.vue'),
+        },
+        {
+          path: '/product/:id',
+          name: 'Product',
+          component: () => import('./views/Product.vue'),
+        },
+        {
+          path: '/create',
+          name: 'Create',
+          component: () => import('./views/Create.vue'),
         },
       ],
     },

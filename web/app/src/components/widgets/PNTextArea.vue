@@ -1,8 +1,8 @@
 <template>
-  <div class="ct-textarea-wrap">
+  <div class="pn-textarea-wrap">
     <textarea
       ref="inputRef"
-      :class="['ct-textarea', inputClass]"
+      :class="['pn-textarea', inputClass]"
       :value="modelValue"
       :type="type"
       :disabled="isDisabled"
@@ -17,7 +17,7 @@
     />
     <label
       v-if="label"
-      class="ct-textarea-label"
+      class="pn-textarea-label"
       :for="inputName"
       :class="{ active: showTitleTop }"
     >
@@ -83,14 +83,14 @@ const handleInput = (e: Event) => {
 <style lang="postcss" scoped>
 @import '../../css/defines.postcss';
 
-.ct-textarea-wrap {
+.pn-textarea-wrap {
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.ct-textarea-label {
+.pn-textarea-label {
   @mixin thin 14px;
   position: absolute;
   top: 10px;
@@ -101,8 +101,8 @@ const handleInput = (e: Event) => {
   pointer-events: none;
 }
 
-.ct-textarea-label.active,
-.ct-textarea:focus ~ .ct-textarea-label {
+.pn-textarea-label.active,
+.pn-textarea:focus ~ .pn-textarea-label {
   @mixin thin 11px;
   top: -9px;
   background-color: white;
@@ -111,7 +111,7 @@ const handleInput = (e: Event) => {
   color: rgba(0, 0, 0, 0.9);
   padding-top: 2px;
 }
-.ct-textarea {
+.pn-textarea {
   @mixin medium 13px;
   @mixin input;
   box-sizing: border-box;

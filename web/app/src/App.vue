@@ -29,7 +29,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background: white;
+  background: $text2;
   color: black;
   * {
     box-sizing: border-box;

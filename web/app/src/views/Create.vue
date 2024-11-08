@@ -33,9 +33,13 @@ const description = ref('')
 <style lang="postcss" scoped>
 @import '../css/defines.postcss';
 
+.create-wrap {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
 .create {
   max-width: 940px;
-  padding: 80px 32px 120px;
+  padding: 0 32px 120px;
   margin: 0 auto;
   position: relative;
 }

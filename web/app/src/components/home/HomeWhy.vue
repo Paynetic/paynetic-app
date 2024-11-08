@@ -44,9 +44,9 @@
           <div class="gs-text">
             {{ ts('transform') }}
           </div>
-          <div class="button1 button2 gs-button">
+          <router-link :to="{ name: 'Connect' }" class="button1 button2 gs-button">
             {{ ts('sign_up') }}
-          </div>
+          </router-link>
         </div>
       </div>
     </div>

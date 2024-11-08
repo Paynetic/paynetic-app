@@ -16,14 +16,14 @@ import EditProfileModal from '../components/profile/EditProfileModal.vue'
 
 const routes: IRoute[] = [
   {
-    name: 'Backed',
-    label: ts('backed'),
-    labelClass: 'backed-tab',
+    name: 'Subscriptions',
+    label: ts('subscriptions'),
+    labelClass: 'subscriptions-tab',
   },
   {
-    name: 'Created',
-    label: ts('created'),
-    labelClass: 'created-tab',
+    name: 'Products',
+    label: ts('products'),
+    labelClass: 'products-tab',
   },
   {
     name: 'Settings',
@@ -37,6 +37,7 @@ const showEditModal = ref(false)
 
 <style lang="postcss" scoped>
 .profile-wrap {
+  padding-top: 140px;
   padding-bottom: 80px;
 }
 .profile-content {

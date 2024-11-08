@@ -2,6 +2,7 @@ import { I18nObject, SimpleI18n, getString, getArray, getRecord } from './util'
 
 const fallback: I18nObject = {
   title: 'Paynetic',
+  browse: 'Browse',
   cancel: 'Cancel',
   confirm: 'Confirm',
   created: 'Created',
@@ -9,6 +10,7 @@ const fallback: I18nObject = {
   edit: 'Edit',
   wallet: 'Wallet',
   logout: 'Log Out',
+  go_back: 'Back',
   email: 'Email',
   name: 'Name',
   bio: 'Bio',
@@ -33,6 +35,8 @@ const fallback: I18nObject = {
   monthly: 'Monthly Subscription',
   subscribe_with: 'Subscribe With',
   sign_up: 'Sign Up Now',
+  products: 'Products',
+  subscriptions: 'Subscriptions',
   why: 'Why Paynetic',
   why_title1: 'AI-Driven Automation',
   why_text1:
@@ -145,6 +149,12 @@ const fallback: I18nObject = {
     how5_a:
       'Yes, users have full control over their subscriptions. You can cancel your subscription at any time through your Paynetic account. After cancellation, no further payments will be deducted from your wallet.',
   },
+  product: {
+    title: 'Products',
+    text: 'Check out these great products and services from our partners.',
+    empty: 'No Products',
+    create: 'Create Product',
+  },
   profile: {
     title: 'Profile',
     settings: 'Settings',
@@ -162,6 +172,8 @@ const fallback: I18nObject = {
     confirm_password: 'Confirm new password',
     switch: 'Connect a new MetaMask wallet to update your Ethereum address.',
     sign: 'Sign a message to confirm your address change',
+    no_subscriptions: 'No Subscriptions',
+    create: 'Create Product',
   },
   footer: {
     copyright: '© 2024 Paynetic - All Rights Reserved.',

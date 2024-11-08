@@ -1,12 +1,12 @@
 <template>
-  <div class="ct-input-wrap">
-    <span v-if="prefix" class="ct-input-prefix">
+  <div class="pn-input-wrap">
+    <span v-if="prefix" class="pn-input-prefix">
       {{ prefix }}
     </span>
     <input
       ref="inputRef"
       :class="[
-        'ct-input',
+        'pn-input',
         inputClass,
         prefix && 'has-prefix',
         suffix && 'has-suffix',
@@ -29,12 +29,12 @@
     />
     <label
       v-if="label"
-      class="ct-input-label"
+      class="pn-input-label"
       :for="inputName"
       :class="{ active: showTitleTop }"
     >
       <span>{{ label }}</span>
-      <span v-if="required" class="ct-input-required">
+      <span v-if="required" class="pn-input-required">
         {{ requiredStar }}
       </span>
     </label>
@@ -43,11 +43,11 @@
       :customIcon="true"
       :message="errorBubble || infoBubble || ''"
       placement="top"
-      class="ct-input-suffix bubble"
+      class="pn-input-suffix bubble"
     >
       <Info :color="errorBubble ? '#f46a6a' : '#5d99b6'" class="error-icon" />
     </InfoBubble>
-    <span v-else-if="suffix" class="ct-input-suffix"> {{ suffix }}</span>
+    <span v-else-if="suffix" class="pn-input-suffix"> {{ suffix }}</span>
     <IconButtonWrap
       v-if="clearable"
       class="clear-button-wrap"
@@ -157,7 +157,7 @@ const clear = () => {
 <style lang="postcss" scoped>
 @import '../../css/defines.postcss';
 
-.ct-input-wrap {
+.pn-input-wrap {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -179,7 +179,7 @@ const clear = () => {
   }
 }
 
-.ct-input-label {
+.pn-input-label {
   @mixin thin 14px;
   position: absolute;
   top: 10px;
@@ -190,8 +190,8 @@ const clear = () => {
   pointer-events: none;
 }
 
-.ct-input-label.active,
-.ct-input:focus ~ .ct-input-label {
+.pn-input-label.active,
+.pn-input:focus ~ .pn-input-label {
   @mixin thin 11px;
   top: -9px;
   background-color: white;
@@ -200,14 +200,14 @@ const clear = () => {
   color: rgba(0, 0, 0, 0.9);
   padding-top: 2px;
 }
-.ct-input-required {
+.pn-input-required {
   color: $color-error;
 }
-.ct-input {
+.pn-input {
   @mixin medium 13px;
   @mixin input;
   box-sizing: border-box;
-  color: $text1;
+  color: black;
   width: 100%;
   height: 40px;
   border-radius: 2px;
@@ -238,8 +238,8 @@ const clear = () => {
   }
 
   &:focus {
-    border-color: $primary;
-    background-color: white;
+    border-color: $text2;
+    background-color: $border1;
     &::-webkit-input-placeholder {
       opacity: 0;
       transition: opacity 0.2s ease;
@@ -286,7 +286,7 @@ const clear = () => {
   }
 }
 
-.ct-input-prefix {
+.pn-input-prefix {
   @mixin medium 16px;
   color: $text2;
   position: absolute;
@@ -294,7 +294,7 @@ const clear = () => {
   left: 14px;
 }
 
-.ct-input-suffix {
+.pn-input-suffix {
   @mixin medium 14px;
   color: $text2;
   position: absolute;
@@ -314,7 +314,7 @@ const clear = () => {
 }
 
 @media (max-width: 680px) {
-  .ct-input-wrap {
+  .pn-input-wrap {
     border-radius: 16px;
   }
 }

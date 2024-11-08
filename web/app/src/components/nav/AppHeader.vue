@@ -7,6 +7,7 @@
       <div class="header-links">
         <HeaderLink to="Integration" :text="ts('integration.title')" />
         <HeaderLink to="Features" :text="ts('features.title')" />
+        <HeaderLink to="Browse" :text="ts('browse')" />
       </div>
       <PNUserMenu v-if="loggedIn" class="user-menu" />
       <router-link v-else :to="{ name: 'Connect' }" class="start-link">
@@ -26,6 +27,7 @@
           :text="ts('features.title')"
           @click="showDrawer(false)"
         />
+        <DrawerLink to="Browse" :text="ts('browse')" @click="showDrawer(false)" />
         <router-link
           :to="{ name: 'Connect' }"
           class="drawer-start"
