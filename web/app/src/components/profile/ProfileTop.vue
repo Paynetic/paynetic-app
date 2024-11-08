@@ -53,16 +53,6 @@ const name = computed(() => {
   return store.user.name.value || 'No Name'
 })
 
-const created = computed(() => {
-  const createCount = 0
-  return `${createCount} ${ts('created')}`
-})
-
-const backed = computed(() => {
-  const backedCount = 0
-  return `${backedCount} ${ts('backed')}`
-})
-
 const location = computed(() => {
   return store.user.location.value
 })
@@ -115,6 +105,7 @@ const joined = computed(() => {
   @mixin semibold 24px;
   text-align: center;
   margin-top: 20px;
+  color: white;
 }
 .top-right {
   padding: 0 0 0 64px;
@@ -125,12 +116,13 @@ const joined = computed(() => {
 }
 .profile-title {
   @mixin bold 40px;
+  color: $text4;
 }
 .profile-edit {
   @mixin bold 16px;
   margin: 4px 0 0 40px;
   cursor: pointer;
-  color: $primary;
+  color: $text3;
   user-select: none;
 }
 .profile-count {
@@ -146,9 +138,6 @@ const joined = computed(() => {
 .count-icon {
   @mixin size 18px;
   margin-right: 6px;
-}
-.backed {
-  margin-left: 24px;
 }
 .profile-description {
   @mixin text 15px;

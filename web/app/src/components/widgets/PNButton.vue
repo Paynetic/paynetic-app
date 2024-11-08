@@ -4,8 +4,8 @@
     :disabled="disabled"
     @click="click"
   >
-    <div v-if="animate" class="ct-button-animate">
-      <Spinner class="ct-button-spinner" />
+    <div v-if="animate" class="pn-button-animate">
+      <Spinner class="pn-button-spinner" />
     </div>
     <div v-else class="button-text">
       <span>
@@ -50,7 +50,7 @@ button {
   position: relative;
 }
 
-.ct-button-animate {
+.pn-button-animate {
   position: absolute;
   display: flex;
   justify-content: center;

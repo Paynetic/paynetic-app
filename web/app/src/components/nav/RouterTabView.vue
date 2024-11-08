@@ -75,14 +75,14 @@ const routerViewProps = computed(() => {
     align-items: center;
     padding: 0 16px;
     height: 40px;
-    color: $text-light;
+    color: $text3;
     background-color: white;
     border: 1px solid rgba(11, 11, 13, 0.1);
     border-radius: 16px;
   }
   &.router-link-active {
     &.router-tab-view-tab--link {
-      color: $primary;
+      color: $text4;
       z-index: 2;
     }
     &.router-tab-view-tab--button {

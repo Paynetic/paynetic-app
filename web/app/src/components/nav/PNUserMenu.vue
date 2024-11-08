@@ -62,7 +62,7 @@ const menuItems: IDropdownMenuItem[] = [
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   overflow: hidden;
   :deep(svg) {
@@ -72,6 +72,7 @@ const menuItems: IDropdownMenuItem[] = [
 }
 :deep(.logout-button) {
   color: $red;
+  cursor: pointer;
 }
 .user-email {
   display: flex;
@@ -92,7 +93,7 @@ const menuItems: IDropdownMenuItem[] = [
   margin-left: auto;
   cursor: pointer;
   :deep(path) {
-    fill: $primary;
+    fill: $text2;
     transition: fill ease 0.2s;
   }
   &:hover {

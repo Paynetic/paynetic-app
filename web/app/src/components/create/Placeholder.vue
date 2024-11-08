@@ -17,11 +17,11 @@
 }
 .placeholder-title {
   @mixin semibold 32px;
-  color: $text3;
+  color: $text4;
 }
 .placeholder-text {
   @mixin medium 20px;
-  color: $text-light;
+  color: $text3;
   margin-top: 24px;
 }
 </style>

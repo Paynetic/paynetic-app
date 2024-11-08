@@ -1,16 +1,16 @@
 <template>
-  <div :class="{ hide: !showMenu }" class="ct-menu">
+  <div :class="{ hide: !showMenu }" class="pn-menu">
     <div
       ref="toggleRef"
-      class="ct-menu-toggle"
+      class="pn-menu-toggle"
       :data-toggle-id="toggleId"
       @click="toggleMenu"
     >
       <slot name="toggle">
-        <span class="ct-menu-toggle-text">
+        <span class="pn-menu-toggle-text">
           {{ label }}
         </span>
-        <span class="ct-menu-toggle-caret" :class="{ opened }" />
+        <span class="pn-menu-toggle-caret" :class="{ opened }" />
       </slot>
     </div>
     <DropdownMenuItems
@@ -47,7 +47,7 @@ const props = withDefaults(
   {
     label: undefined,
     items: () => [],
-    clickawaySelector: '.ct-menu',
+    clickawaySelector: '.pn-menu',
     hideWhenNoItems: false,
     extraHeight: 0,
   },
@@ -78,14 +78,14 @@ const showMenu = computed(() => {
 <style lang="postcss" scoped>
 @import '../../css/defines.postcss';
 
-.ct-menu {
+.pn-menu {
   position: relative;
   color: black;
   &.hide {
     display: none;
   }
 }
-.ct-menu-toggle {
+.pn-menu-toggle {
   display: flex;
   flex-direction: row;
   padding-right: 8px;
@@ -93,13 +93,13 @@ const showMenu = computed(() => {
   cursor: pointer;
   border-radius: 4px;
 }
-.ct-menu-toggle-text {
+.pn-menu-toggle-text {
   @mixin text 16px;
   @mixin truncate;
   display: inline-block;
   margin-right: 16px;
 }
-.ct-menu-toggle-caret {
+.pn-menu-toggle-caret {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
