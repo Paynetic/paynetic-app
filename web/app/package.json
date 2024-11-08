@@ -1,0 +1,58 @@
+{
+  "name": "@paynetic/app",
+  "version": "1.0.0",
+  "description": "Paynetic web frontend",
+  "type": "module",
+  "main": "dist/paynetic-app.es.js",
+  "module": "dist/paynetic-app.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/paynetic-app.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    }
+  },
+  "types": "dist/index.d.mts.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paynetic/paynetic-app.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@floating-ui/vue": "^1.1.5",
+    "@samatech/fetch-api": "catalog:",
+    "@samatech/vue-store": "^0.6.0",
+    "@samatech/vue3-eth": "0.8.0",
+    "date-fns": "^3.6.0",
+    "jwt-decode": "^4.0.0",
+    "vue": "catalog:",
+    "vue-gtag": "^2.0.1",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "catalog:",
+    "@types/node": "^20.17.0",
+    "@vitejs/plugin-vue": "catalog:",
+    "lightningcss": "^1.27.0",
+    "postcss": "catalog:",
+    "postcss-mixins": "catalog:",
+    "postcss-nested": "catalog:",
+    "postcss-simple-vars": "catalog:",
+    "prettier": "^3.3.3",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-node-polyfills": "^0.22.0"
+  }
+}

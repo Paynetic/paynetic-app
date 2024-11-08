@@ -1,0 +1,240 @@
+$overlay: rgba(0, 0, 0, 0.6);
+
+.app-content {
+  position: relative;
+}
+.noscroll {
+  overflow: hidden;
+}
+
+.f-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 600px;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.button1 {
+  @mixin text 16px;
+  border: 1px solid white;
+  color: white;
+  transition: all 0.2s ease;
+  padding: 6px 16px;
+  font-weight: 700;
+  user-select: none;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: $primary;
+  }
+  &.disabled {
+    border-color: $border1;
+    color: $border1;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.button2 {
+  background-color: white;
+  color: $primary;
+  padding: 6px 10px;
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.button3 {
+  background-color: $primary;
+  color: white;
+  border-color: $primary;
+  &:hover {
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
+}
+
+.button-cancel {
+  background-color: $bg-light1;
+  color: black;
+  &:hover {
+    background-color: $bg-light2;
+    color: black;
+  }
+}
+
+.cancel {
+  @mixin semibold 14px;
+  margin-right: 16px;
+  color: $red;
+  cursor: pointer;
+  user-select: none;
+}
+
+.blog-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+  min-height: calc(100vh - 360px);
+  position: relative;
+  li {
+    margin-top: 12px;
+  }
+}
+
+.blog-title {
+  @mixin title 32px;
+  color: white;
+  text-align: center;
+  padding-top: 180px;
+  position: relative;
+}
+.blog-image {
+  width: 100%;
+  max-width: 900px;
+  height: 420px;
+  margin: 40px auto 48px;
+  padding: 0 40px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+.blog-head {
+  @mixin extra 24px;
+  margin-top: 40px;
+}
+.blog-label {
+  @mixin bold 20px;
+  margin-top: 24px;
+}
+
+.blog-text {
+  @mixin text 16px;
+  color: $text1;
+  margin-top: 16px;
+  line-height: 1.4em;
+}
+
+.modal-title {
+  @mixin bold 28px;
+  color: $text3;
+}
+.modal-text {
+  @mixin medium 16px;
+  line-height: 140%;
+  color: $text1;
+  margin-top: 16px;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+}
+.header {
+  @mixin text 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 48px 40px 24px;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+.header-logo {
+  width: 220px;
+}
+.header-links {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.user-menu {
+  margin-left: auto;
+}
+.burger {
+  display: none;
+  margin-left: 16px;
+}
+.header-drawer {
+  display: none;
+}
+.drawer-start {
+  @mixin bold 18px;
+  border: 2px solid black;
+  margin: 8px auto 0;
+  padding: 6px 16px;
+  width: 100%;
+  text-align: center;
+  max-width: 470px;
+  color: black;
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+@media (max-width: 880px) {
+  .header {
+    padding-top: 40px;
+  }
+  .header-logo {
+    width: 130px;
+  }
+  .header-links a {
+    margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  .header-links {
+    display: none;
+  }
+  .header-drawer {
+    display: block;
+  }
+  .start-link {
+    margin-left: auto;
+    margin-right: 16px;
+  }
+  .burger {
+    display: flex;
+  }
+}

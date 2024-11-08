@@ -1,0 +1,48 @@
+{
+  "name": "paynetic-app",
+  "version": "1.0.0",
+  "description": "Mono repo for https://paynetic.net including frontend/backend/blockchain.",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "type": "module",
+  "scripts": {
+    "format": "prettier -w \"{**/*,*}.{ts,js,json}\"",
+    "format:check": "prettier --check \"{**/*,*}.{ts,js,json,vue}\"",
+    "lint": "oxlint -c .oxlintrc.json .",
+    "lint:style": "./node_modules/.bin/stylelint \"**/src/**/*.{css,vue}\"",
+    "dev:web:run": "pnpm --filter '@paynetic/app' run dev",
+    "prod:web:build": "pnpm --filter '@paynetic/app' run build",
+    "prod:web:preview": "pnpm --filter '@paynetic/app' run preview",
+    "dev:backend:build": "cd backend && cargo build",
+    "dev:build-aarch": "cd backend && CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-unknown-linux-gnu-gcc cargo build --target aarch64-unknown-linux-gnu",
+    "prod:build-aarch": "cd backend && CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-unknown-linux-gnu-gcc cargo build --release --target aarch64-unknown-linux-gnu",
+    "dev:backend:run": "cd backend && cargo run",
+    "manual:db:run": "cd backend/db-app && ../target/debug/db-app",
+    "manual:api-test-helper:run": "cd backend/api-test-helper && ../target/debug/api-test-helper",
+    "manual:api:run": "cd backend/paynetic-api && ../target/debug/paynetic-api",
+    "prod:backend:build": "cd backend && cargo build --release",
+    "backend-test": "cd web/backend-test && nx jest --",
+    "skaffold:basic": "(skaffold dev --platform linux/arm64 -f skaffold.basic.yaml --cache-artifacts=true)",
+    "prune": "tools/scripts/prune-all.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PayneticApp/paynetic-app.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PayneticApp/paynetic-app/issues"
+  },
+  "homepage": "https://github.com/PayneticApp/paynetic-app#Readme.md",
+  "author": "Paynetic",
+  "devDependencies": {
+    "oxlint": "^0.9.10",
+    "postcss-html": "^1.7.0",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended-vue": "^1.5.0"
+  }
+}
