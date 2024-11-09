@@ -39,7 +39,7 @@ defineProps<{
 }
 .row-title {
   @mixin bold 17px;
-  color: $text1;
+  color: white;
 }
 .row-text {
   @mixin text 16px;

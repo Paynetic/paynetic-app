@@ -168,9 +168,11 @@ const savePassword = async () => {
   @mixin text 15px;
   text-align: right;
   margin-bottom: 12px;
+  color: white;
 }
 .settings-button {
   width: 172px;
+  color: $text2;
 }
 .update-buttons {
   display: flex;
