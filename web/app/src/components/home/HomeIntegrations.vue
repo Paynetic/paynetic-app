@@ -42,7 +42,6 @@ import IntegrationTypes from './IntegrationTypes.vue'
 }
 .integrations {
   @mixin medium 16px;
-  color: white;
   text-transform: uppercase;
   letter-spacing: 0.35em;
   color: $text4;

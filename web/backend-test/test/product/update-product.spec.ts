@@ -10,8 +10,6 @@ import {
   adminAuthHeader,
   userAuthHeader,
   AppDbResetService,
-  now,
-  dayToSec,
 } from '../helpers'
 import { testConfig } from '../test.config'
 import { describe, expect, test, beforeAll, beforeEach } from 'vitest'

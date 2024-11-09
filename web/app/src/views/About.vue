@@ -379,7 +379,6 @@ onUnmounted(() => {
 }
 .box-text {
   @mixin text 16px;
-  margin-top: 12px;
   max-width: 373px;
   width: 100%;
   margin: 12px auto 0;

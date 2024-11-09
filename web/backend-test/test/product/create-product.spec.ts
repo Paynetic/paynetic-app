@@ -10,8 +10,6 @@ import { commonRegex } from '@app/util'
 import {
   adminAuthHeader,
   AppDbResetService,
-  dayToSec,
-  now,
   testagent,
   TestAgent,
   userAuthHeader,

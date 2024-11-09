@@ -34,13 +34,13 @@ export const testConfig = convict({
   confirmSharedSecret: {
     doc: 'Shared secret for user confirm tokens',
     format: String,
-    default: 'pTHHvgH2P+ea/LzWMYJEYGZ3cbsRx9nO9RhPT5QeF+k=',
+    default: '1a4BHRjl/jwCTcgGKYggQFsWFcF8XUiovC+I8c5q5VE=',
     env: 'CONFIRM_SHARED_SECRET',
   },
   appAuthSecret: {
     doc: 'Shared secret for app authorization',
     format: String,
-    default: 'K0EKfNOtfZ8wTQB2UPydgN1wJXnOgmOXyJvIYDXVces=',
+    default: '+pOs1gZorccl/8zVDShAazQVfVE7ZRyxrkaiUeWq0Qg=',
     env: 'APP_AUTH_SECRET',
   },
   authExpiresIn: {
