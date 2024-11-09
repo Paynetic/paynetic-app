@@ -13,7 +13,7 @@
         <PNButton
           :text="ts('save')"
           :animate="saving"
-          class="edit-submit"
+          class="edit-submit button2"
           @click="save"
         />
         <PNButton
@@ -135,6 +135,7 @@ const save = async () => {
   .edit-submit {
     width: 110px;
     margin: 0 24px 0 0;
+    border: 1px solid $primary;
   }
   .button-cancel {
     width: 110px;
