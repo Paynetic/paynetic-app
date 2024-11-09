@@ -34,11 +34,4 @@ import { ts } from '../../i18n'
   @mixin title 36px;
   color: white;
 }
-
-@media (max-width: 1180px) {
-}
-@media (max-width: 800px) {
-}
-@media (max-width: 800px) {
-}
 </style>

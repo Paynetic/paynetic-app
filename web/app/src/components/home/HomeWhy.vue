@@ -188,9 +188,6 @@ import WhyContent from './WhyContent.vue'
   height: 226px;
   background-color: $highlight;
 }
-.v1,
-.v2 {
-}
 .v3,
 .h4,
 .h5 {
@@ -403,13 +400,11 @@ import WhyContent from './WhyContent.vue'
     max-width: 300px;
   }
   .why-item {
-    padding: 32px 20px 8px 28px;
-  }
-  .why-item {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 32px 20px 8px 28px;
   }
   .v1,
   .v3,

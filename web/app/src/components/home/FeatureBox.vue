@@ -66,6 +66,18 @@ onUnmounted(() => {
 <style lang="postcss" scoped>
 @import '../../css/defines.postcss';
 
+.box-left {
+  background: linear-gradient(
+    115deg,
+    rgba(181, 216, 205, 0.25) 0%,
+    rgb(181, 216, 205) 100%
+  );
+  width: 65%;
+  text-align: left;
+  padding: 0 32px 0 64px;
+  align-items: flex-start;
+}
+
 .feature-box {
   display: flex;
   position: relative;
@@ -90,18 +102,6 @@ onUnmounted(() => {
     left: 0;
     opacity: 1;
   }
-}
-
-.box-left {
-  background: linear-gradient(
-    115deg,
-    rgba(181, 216, 205, 0.25) 0%,
-    rgb(181, 216, 205) 100%
-  );
-  width: 65%;
-  text-align: left;
-  padding: 0 32px 0 64px;
-  align-items: flex-start;
 }
 .box-title {
   @mixin bold 20px;

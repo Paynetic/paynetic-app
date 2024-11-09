@@ -8,7 +8,7 @@ import { SubscriptionInterval } from './enum-subscription-interval'
 export interface IPriceViewModel {
   id: string
   active: boolean
-  name: String
+  name: string
   price_type: PriceType
   amount: string
   base_currency: PaymentCurrency

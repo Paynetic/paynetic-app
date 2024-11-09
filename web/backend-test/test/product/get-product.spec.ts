@@ -1,7 +1,6 @@
 import {
   BlockchainStatus,
   IGetProductApiResponse,
-  PaymentCurrency,
   ProductCategory,
   ProductStatus,
 } from '@app/types'

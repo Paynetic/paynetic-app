@@ -155,7 +155,6 @@ $text-color: rgb(130, 206, 199);
   margin-top: 8px;
 }
 .bottom-divider {
-  height: 100%;
   width: 1px;
   height: 17px;
   background-color: white;
@@ -282,7 +281,6 @@ a.active {
     align-items: center;
   }
   .footer-cols {
-    margin-left: 0;
     margin: 48px 0 0 0;
   }
   .footer-col {
