@@ -12,7 +12,7 @@ use axum::{
     Router,
 };
 
-use super::health;
+use super::{health, subscription};
 
 pub fn app_router(context: &ApiContext) -> Router<ApiContext> {
     Router::new().nest("/api", api_router(context))
@@ -77,6 +77,27 @@ pub fn api_router(context: &ApiContext) -> Router<ApiContext> {
             )))
             .patch(
                 product::update_product::update_product
+                    .layer(from_fn_with_state(context.clone(), auth_admin_user)),
+            ),
+        )
+        .route(
+            "/products/:product_id/purchase",
+            post(
+                product::purchase_product::purchase_product
+                    .layer(from_fn_with_state(context.clone(), auth_admin_user)),
+            ),
+        )
+        .route(
+            "/subscriptions",
+            get(subscription::list_subscriptions::list_subscriptions
+                .layer(from_fn_with_state(context.clone(), auth_admin_user))),
+        )
+        .route(
+            "/subscriptions/:subscription_id",
+            get(subscription::get_subscription::get_subscription
+                .layer(from_fn_with_state(context.clone(), auth_admin_user)))
+            .patch(
+                subscription::update_subscription::update_subscription
                     .layer(from_fn_with_state(context.clone(), auth_admin_user)),
             ),
         )

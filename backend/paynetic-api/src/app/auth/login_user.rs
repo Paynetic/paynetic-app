@@ -10,7 +10,7 @@ use lib_api::error::api_error::ApiError;
 
 use lib_api::error::helpers::check_bad_form;
 use lib_api::eth::verify_signature::verify_signature;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::auth::login_dto::{LoginDto, LoginResponse};
 use lib_types::shared::api_error::ApiErrorCode;
 use validator::Validate;
@@ -34,7 +34,7 @@ fn login_error() -> ApiError {
 
 pub async fn login_user(
     State(context): State<ApiContext>,
-    CtJson(dto): CtJson<LoginDto>,
+    PnJson(dto): PnJson<LoginDto>,
 ) -> Result<(StatusCode, Json<LoginResponse>), ApiError> {
     check_bad_form(dto.validate())?;
 
