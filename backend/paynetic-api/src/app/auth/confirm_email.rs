@@ -3,7 +3,7 @@ use axum::extract::State;
 use lib_api::auth::verify_jwt::verify_confirm_token;
 use lib_api::db::db_error::DbError;
 use lib_api::error::api_error::ApiError;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::auth::confirm_email_dto::ConfirmEmailDto;
 use lib_types::entity::user_entity::UserUpdateParams;
 
@@ -11,7 +11,7 @@ use crate::api_context::ApiContext;
 
 pub async fn confirm_email(
     State(context): State<ApiContext>,
-    CtJson(dto): CtJson<ConfirmEmailDto>,
+    PnJson(dto): PnJson<ConfirmEmailDto>,
 ) -> Result<(), ApiError> {
     let secret = &context.config.confirm_shared_secret;
 

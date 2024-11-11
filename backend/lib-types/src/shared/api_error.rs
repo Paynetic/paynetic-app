@@ -20,6 +20,8 @@ pub enum ApiErrorCode {
     InvalidSignature,
     ProductExists,
     ProductActive,
+    ProductInactive,
+    ProductNoPrice,
     RestrictedStatus,
     SignatureRequired,
     UserExists,

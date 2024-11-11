@@ -158,7 +158,7 @@ describe('List Products', () => {
       const response = await api
         .get(testEndpoint)
         .query(query)
-        .set('Authorization', adminAuth)
+        .set('Authorization', userAuth)
         .expect(200)
 
       const body: IListProductsApiResponse = response.body
@@ -170,18 +170,21 @@ describe('List Products', () => {
     })
 
     test('filters by other user_id', async () => {
-      query = { user_id: '2199c39f-4fb3-4f72-b685-fe62b90fcef0' }
+      query = { user_id: '90679368-ba27-4d7f-be85-849b4328d93a' }
       const response = await api
         .get(testEndpoint)
         .query(query)
-        .set('Authorization', adminAuth)
+        .set('Authorization', userAuth)
         .expect(200)
 
       const body: IListProductsApiResponse = response.body
 
-      expect(body.total).toEqual(2)
-      expect(body.results[0].id).toEqual('31153d5e-5c78-4156-85ee-fad95a25047b')
-      expect(body.results[1].id).toEqual('49d5b949-e4a1-4c21-a502-8b1d310698dc')
+      expect(body.total).toEqual(5)
+      expect(body.results[0].id).toEqual('cf8550ca-3542-4165-8435-3f5c6c77a761')
+      expect(body.results[1].id).toEqual('673fad5b-626a-4a74-8cbd-afd45c4cf7d3')
+      expect(body.results[2].id).toEqual('7922b138-65dc-412e-87c1-059325574595')
+      expect(body.results[3].id).toEqual('d105b284-e516-42c1-8690-6612e7cd7bc7')
+      expect(body.results[4].id).toEqual('1342c40f-dada-4e12-af3d-6e073ad171a4')
     })
   })
 

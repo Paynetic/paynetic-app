@@ -6,7 +6,7 @@ use lib_api::db::db_error::DbError;
 use lib_api::db::util::commit_or_rollback;
 use lib_api::error::api_error::ApiError;
 use lib_api::error::helpers::check_bad_form;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::product::create_product_dto::{CreateProductDto, CreateProductResponse};
 use lib_types::entity::product_entity::ProductEntity;
 use lib_types::shared::api_error::ApiErrorCode;
@@ -27,7 +27,7 @@ fn to_api_response(result: ProductEntity) -> Json<CreateProductResponse> {
 pub async fn create_product(
     State(context): State<ApiContext>,
     Extension(request_user): Extension<RequestUser>,
-    CtJson(dto): CtJson<CreateProductDto>,
+    PnJson(dto): PnJson<CreateProductDto>,
 ) -> Result<(StatusCode, Json<CreateProductResponse>), ApiError> {
     check_bad_form(dto.validate())?;
     let user = get_request_user(&context, &request_user).await?;

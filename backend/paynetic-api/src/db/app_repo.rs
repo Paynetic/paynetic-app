@@ -8,6 +8,7 @@ use sqlx::{PgPool, Postgres, Transaction};
 
 use super::{
     product_repo::{DynProductRepo, ProductRepo},
+    subscription_repo::{DynSubscriptionRepo, SubscriptionRepo},
     user_repo::{DynUserRepo, UserRepo},
 };
 
@@ -16,6 +17,7 @@ pub struct AppRepo {
     pub db: PgPool,
     pub user: DynUserRepo,
     pub product: DynProductRepo,
+    pub subscription: DynSubscriptionRepo,
 }
 
 impl AppRepo {
@@ -27,6 +29,7 @@ impl AppRepo {
             db: db.clone(),
             user: Arc::new(UserRepo { db: db.clone() }) as DynUserRepo,
             product: Arc::new(ProductRepo { db: db.clone() }) as DynProductRepo,
+            subscription: Arc::new(SubscriptionRepo { db: db.clone() }) as DynSubscriptionRepo,
         })
     }
 

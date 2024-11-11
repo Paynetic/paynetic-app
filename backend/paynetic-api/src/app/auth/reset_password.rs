@@ -5,7 +5,7 @@ use lib_api::error::api_error::ApiError;
 use lib_api::{auth::generate_jwt::generate_jwt, db::db_error::DbError};
 
 use lib_api::error::helpers::check_bad_form;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::auth::reset_password_dto::ResetPasswordDto;
 use tracing::{error, info};
 use validator::Validate;
@@ -14,7 +14,7 @@ use crate::api_context::ApiContext;
 
 pub async fn reset_password(
     State(context): State<ApiContext>,
-    CtJson(dto): CtJson<ResetPasswordDto>,
+    PnJson(dto): PnJson<ResetPasswordDto>,
 ) -> Result<StatusCode, ApiError> {
     let email = dto.email.clone();
     check_bad_form(dto.validate())?;
