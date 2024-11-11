@@ -6,7 +6,7 @@ use lib_api::db::util::commit_or_rollback;
 use lib_api::error::api_error::ApiError;
 
 use lib_api::error::helpers::check_bad_form;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::product::product_view_model::{to_api_response, ProductViewModel};
 use lib_types::dto::product::update_product_dto::UpdateProductDto;
 use lib_types::shared::api_error::ApiErrorCode;
@@ -25,7 +25,7 @@ pub async fn update_product(
     Path(product_id): Path<Uuid>,
     State(context): State<ApiContext>,
     Extension(request_user): Extension<RequestUser>,
-    CtJson(dto): CtJson<UpdateProductDto>,
+    PnJson(dto): PnJson<UpdateProductDto>,
 ) -> Result<(StatusCode, Json<ProductViewModel>), ApiError> {
     check_bad_form(dto.validate())?;
 

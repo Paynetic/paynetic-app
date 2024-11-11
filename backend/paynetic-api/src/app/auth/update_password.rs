@@ -5,7 +5,7 @@ use axum::Extension;
 use lib_api::error::api_error::ApiError;
 
 use lib_api::error::helpers::check_bad_form;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::auth::update_password_dto::UpdatePasswordDto;
 use lib_types::entity::user_entity::UserUpdateParams;
 use lib_types::shared::user::RequestUser;
@@ -16,7 +16,7 @@ use crate::api_context::ApiContext;
 pub async fn update_password(
     State(context): State<ApiContext>,
     Extension(user): Extension<RequestUser>,
-    CtJson(dto): CtJson<UpdatePasswordDto>,
+    PnJson(dto): PnJson<UpdatePasswordDto>,
 ) -> Result<StatusCode, ApiError> {
     check_bad_form(dto.validate())?;
     let user_id = user

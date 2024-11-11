@@ -6,7 +6,7 @@ use lib_api::error::api_error::ApiError;
 
 use lib_api::error::helpers::check_bad_form;
 use lib_api::eth::verify_signature::verify_signature;
-use lib_api::util::json_extractor::CtJson;
+use lib_api::util::json_extractor::PnJson;
 use lib_types::dto::user::update_user_dto::UpdateUserDto;
 use lib_types::dto::user::user_view_model::{to_api_response, UserViewModel};
 use lib_types::entity::user_entity::UserUpdateParams;
@@ -24,7 +24,7 @@ pub async fn update_user(
     Path(user_id): Path<Uuid>,
     State(context): State<ApiContext>,
     Extension(request_user): Extension<RequestUser>,
-    CtJson(dto): CtJson<UpdateUserDto>,
+    PnJson(dto): PnJson<UpdateUserDto>,
 ) -> Result<(StatusCode, Json<UserViewModel>), ApiError> {
     check_bad_form(dto.validate())?;
     let has_new_email = dto.email.is_some();

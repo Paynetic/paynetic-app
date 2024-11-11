@@ -11,7 +11,7 @@ use crate::error::api_error::ApiError;
 // Create a custom extractor based on `axum::Json` with a custom rejection
 #[derive(FromRequest)]
 #[from_request(via(axum::Json), rejection(ApiError))]
-pub struct CtJson<T>(pub T);
+pub struct PnJson<T>(pub T);
 
 fn field_from_error(err: &str) -> Option<String> {
     if let Ok(regex) = Regex::new(r"missing field `([a-zA-Z0-9]+)`.*") {

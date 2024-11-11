@@ -23,7 +23,13 @@ impl AppRepoTrait for AppRepo {
     }
 
     async fn reset(&self) -> Result<(), DbError> {
-        let tables = vec!["users", "products", "prices"];
+        let tables = vec![
+            "users",
+            "products",
+            "prices",
+            "subscriptions",
+            "subscription_prices",
+        ];
 
         for table in tables.iter() {
             let result = sqlx::query(&format!(
