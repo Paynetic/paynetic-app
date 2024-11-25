@@ -4,6 +4,7 @@ metadata:
   name: paynetic-api
 requires:
   - path: ./skaffold.db.yaml
+  - path: ./skaffold.blockchain.yaml
 build:
   local:
     useBuildkit: true
